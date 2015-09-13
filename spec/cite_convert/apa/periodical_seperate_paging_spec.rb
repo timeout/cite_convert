@@ -15,7 +15,7 @@ RSpec.describe CiteConvert::Reference::Apa::Periodical do
 
   describe 'An article in a journal with continuos paging' do
     it 'creates an apa reference' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('journal', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Hughes', 'Jane C.'))
       reference.add_author(CiteConvert::Reference::Author.new('Brestan', 'Elizabeth V.'))
       reference.add_author(CiteConvert::Reference::Author.new('Christens', 'Brian D.'))
@@ -45,7 +45,7 @@ RSpec.describe CiteConvert::Reference::Apa::Periodical do
 
   describe 'An article in a monthly magazine' do
     it 'creates an apa reference' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('journal', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Martinez-Conde', 'Susana'))
       reference.add_author(CiteConvert::Reference::Author.new('Macknick', 'Stephen L.'))
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2007', '8'))
@@ -73,7 +73,7 @@ RSpec.describe CiteConvert::Reference::Apa::Periodical do
 
   describe 'An article in a weekly magazine' do
     it 'creates an apa reference' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('journal', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Begley', 'S.'))
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2007', '2', '8'))
       reference.article_title=('The depressing news about antidepressants')

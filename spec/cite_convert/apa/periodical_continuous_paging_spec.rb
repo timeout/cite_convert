@@ -14,7 +14,7 @@ RSpec.describe CiteConvert::Reference::Apa::Periodical do
 
   describe 'An article in a journal with continuos paging' do
     it 'creates an apa reference' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('journal', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Harrison', 'Richard L.'))
       reference.add_author(CiteConvert::Reference::Author.new('Westwood', 'Marvin J.'))
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2009'))
@@ -38,7 +38,7 @@ RSpec.describe CiteConvert::Reference::Apa::Periodical do
     end
 
     it 'creates an apa reference' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('journal', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Nuttman-Schwartz', 'Orit'))
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2007'))
       reference.article_title=('Is there life without work?')

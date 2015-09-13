@@ -10,7 +10,7 @@ require 'cite_convert/reference/apa/editor'
 RSpec.describe CiteConvert::Reference::Apa::Book do
   describe 'a book with no author named' do
     it 'creates an apa reference' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2004'))
       reference.title='United Press International stylebook and guide to newswriting'
       reference.edition='4'
@@ -31,7 +31,7 @@ RSpec.describe CiteConvert::Reference::Apa::Book do
     end
 
     it 'creates an apa reference' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_editor(CiteConvert::Reference::Editor.new('VandenBos', 'Gary R.'))
       reference.publication_date=CiteConvert::Reference::PublicationDate.new('2007')
       reference.title='APA dictionary of psychology'
@@ -56,7 +56,7 @@ RSpec.describe CiteConvert::Reference::Apa::Book do
     end
 
     it 'creates an apa reference' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.organisation = 'American Psychological Association'
       reference.publication_date=CiteConvert::Reference::PublicationDate.new('2009')
       reference.title='Publication Manual of the American Psychological Association'
@@ -80,7 +80,7 @@ RSpec.describe CiteConvert::Reference::Apa::Book do
     end
 
     it 'creates an apa reference' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.organisation = 'American Medical Association'
       reference.publication_date=CiteConvert::Reference::PublicationDate.new('2007')
       reference.title='American Medical Association manual of style: A guide to authors and editors'

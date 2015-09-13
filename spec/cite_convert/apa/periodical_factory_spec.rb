@@ -4,7 +4,7 @@ require 'cite_convert/reference'
 RSpec.describe CiteConvert::ReferenceFactory::ApaPeriodical do
   describe '#make_reference' do
     it 'creates a periodical reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('journal', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Hughes', 'Jane C.'))
       reference.add_author(CiteConvert::Reference::Author.new('Brestan', 'Elizabeth V.'))
       reference.add_author(CiteConvert::Reference::Author.new('Christens', 'Brian D.'))
@@ -23,7 +23,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaPeriodical do
     end
 
     it 'creates a periodical reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('journal', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Martinez-Conde', 'Susana'))
       reference.add_author(CiteConvert::Reference::Author.new('Macknick', 'Stephen L.'))
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2007', '8'))
@@ -39,7 +39,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaPeriodical do
     end
 
     it 'creates a periodical reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('journal', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Harrison', 'Richard L.'))
       reference.add_author(CiteConvert::Reference::Author.new('Westwood', 'Marvin J.'))
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2009'))
@@ -54,7 +54,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaPeriodical do
     end
 
     it 'creates a periodical from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('journal', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Nuttman-Schwartz', 'Orit'))
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2007'))
       reference.article_title=('Is there life without work?')

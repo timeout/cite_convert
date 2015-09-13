@@ -18,7 +18,7 @@ RSpec.describe CiteConvert::Reference::Apa::Book do
 
   describe 'basic format' do
     it 'creates a book reference for a single author' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Chessick', 'Richard D.'))
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2007'))
       reference.title=('The Future of Psychoanalysis')
@@ -42,7 +42,7 @@ RSpec.describe CiteConvert::Reference::Apa::Book do
     end
 
     it 'creates a book reference for two or more authors' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Wright', 'John Paul'))
       reference.add_author(CiteConvert::Reference::Author.new('Tibbetts', 'Stephen G.'))
       reference.add_author(CiteConvert::Reference::Author.new('Daigle', 'Leah E.'))

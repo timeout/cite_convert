@@ -5,7 +5,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaBook do
   # basic book
   describe '#make_reference' do
     it 'creates a book reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Chessick', 'Richard D.'))
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2007'))
       reference.title=('The Future of Psychoanalysis')
@@ -18,7 +18,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaBook do
     end
 
     it 'creates a book reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Wright', 'John Paul'))
       reference.add_author(CiteConvert::Reference::Author.new('Tibbetts', 'Stephen G.'))
       reference.add_author(CiteConvert::Reference::Author.new('Daigle', 'Leah E.'))
@@ -33,7 +33,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaBook do
     end
 
     it 'creates a book reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Lazarus', 'Richard S.'))
       reference.add_author(CiteConvert::Reference::Author.new('Lazarus', 'Bernice N.'))
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2006'))
@@ -48,7 +48,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaBook do
 
     # book editors
     it 'creates a book reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_editor(CiteConvert::Reference::Editor.new('Foreman', 'Marquis D.'))
       reference.add_editor(CiteConvert::Reference::Editor.new('Milisen', 'Koen'))
       reference.add_editor(CiteConvert::Reference::Editor.new('Fulner', 'Terry T.'))
@@ -63,7 +63,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaBook do
     end
 
     it 'creates a book reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Estrin', 'Miriam'))
       reference.add_author(CiteConvert::Reference::Author.new('Malm', 'Carl'))
       reference.add_editor(CiteConvert::Reference::Editor.new('Rice', 'Susan E.'))
@@ -82,7 +82,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaBook do
     end
 
     it 'creates a book reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2004'))
       reference.title='United Press International stylebook and guide to newswriting'
       reference.edition='4'
@@ -95,7 +95,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaBook do
     end
 
     it 'creates a book reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_editor(CiteConvert::Reference::Editor.new('VandenBos', 'Gary R.'))
       reference.publication_date=CiteConvert::Reference::PublicationDate.new('2007')
       reference.title='APA dictionary of psychology'
@@ -108,7 +108,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaBook do
     end
 
     it 'creates a book reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.organisation = 'American Psychological Association'
       reference.publication_date=CiteConvert::Reference::PublicationDate.new('2009')
       reference.title='Publication Manual of the American Psychological Association'
@@ -122,7 +122,7 @@ RSpec.describe CiteConvert::ReferenceFactory::ApaBook do
     end
 
     it 'creates a book reference from bibliographic meta data' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.organisation = 'American Medical Association'
       reference.publication_date=CiteConvert::Reference::PublicationDate.new('2007')
       reference.title='American Medical Association manual of style: A guide to authors and editors'

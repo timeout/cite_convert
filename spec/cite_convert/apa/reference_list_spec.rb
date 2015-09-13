@@ -7,7 +7,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   let(:list) { CiteConvert::ReferenceList::Apa.new }
   
   def chessick
-    reference = CiteConvert::Reference::Reference.new(1)
+    reference = CiteConvert::Reference::Reference.new('book', 1)
     reference.add_author(CiteConvert::Reference::Author.new('Chessick', 'Richard D.'))
     reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2007'))
     reference.title=('The Future of Psychoanalysis')
@@ -18,7 +18,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   end
 
   def lazarus
-    reference = CiteConvert::Reference::Reference.new(2)
+    reference = CiteConvert::Reference::Reference.new('book', 2)
     reference.add_author(CiteConvert::Reference::Author.new('Lazarus', 'Richard S.'))
     reference.add_author(CiteConvert::Reference::Author.new('Lazarus', 'Bernice N.'))
     reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2006'))
@@ -30,7 +30,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   end
 
   def koriat_a
-    reference = CiteConvert::Reference::Reference.new(3)
+    reference = CiteConvert::Reference::Reference.new('journal', 3)
     reference.add_author(CiteConvert::Reference::Author.new('Koriat', 'Asher'))
     reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2008'))
     reference.article_title= 'Easy comes, easy goes? The link between learning and remembering and its exploitation in metacognition.'
@@ -42,7 +42,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   end
 
   def koriat_b
-    reference = CiteConvert::Reference::Reference.new(4)
+    reference = CiteConvert::Reference::Reference.new('journal', 4)
     reference.add_author(CiteConvert::Reference::Author.new('Koriat', 'Asher'))
     reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2008'))
     reference.article_title= 'Subjective confidence in one’s answers: The consensuality principle.'
@@ -54,7 +54,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   end
 
   def brown_desmond
-    reference = CiteConvert::Reference::Reference.new(5)
+    reference = CiteConvert::Reference::Reference.new('book', 5)
     reference.add_author(CiteConvert::Reference::Author.new('Brown', 'Desmond J.'))
     reference.publication_date=(CiteConvert::Reference::PublicationDate.new('2000'))
     reference.title = 'The Chemistry of heterocyclic compounds'
@@ -65,7 +65,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   end
 
   def brown_herbert
-    reference = CiteConvert::Reference::Reference.new(6)
+    reference = CiteConvert::Reference::Reference.new('book', 6)
     reference.add_author(CiteConvert::Reference::Author.new('Brown', 'Herbert Charles'))
     reference.publication_date = CiteConvert::Reference::PublicationDate.new('1977')
     reference.title = 'The nonclassical ion problem'
@@ -76,7 +76,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   end
 
   def campbell_a
-    reference = CiteConvert::Reference::Reference.new(7)
+    reference = CiteConvert::Reference::Reference.new('journal', 7)
     reference.add_author(CiteConvert::Reference::Author.new('Campbell', 'Anne'))
     reference.add_author(CiteConvert::Reference::Author.new('Muncer', 'Steven'))
     reference.add_author(CiteConvert::Reference::Author.new('Gorman', 'Bernard'))
@@ -90,7 +90,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   end
 
   def campbell_w
-    reference = CiteConvert::Reference::Reference.new(8)
+    reference = CiteConvert::Reference::Reference.new('journal', 8)
     reference.add_author(CiteConvert::Reference::Author.new('Campbell', 'W. Keith'))
     reference.add_author(CiteConvert::Reference::Author.new('Bush', 'C. P.'))
     reference.add_author(CiteConvert::Reference::Author.new('Brunell', 'Amy B.'))
@@ -104,7 +104,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   end
 
   def organisation_apa
-    reference = CiteConvert::Reference::Reference.new(9)
+    reference = CiteConvert::Reference::Reference.new('book', 9)
     reference.organisation = 'American Psychological Association'
     reference.publication_date=CiteConvert::Reference::PublicationDate.new('2009')
     reference.title='Publication Manual of the American Psychological Association'
@@ -116,7 +116,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   end
 
   def organisation_ncte
-    reference = CiteConvert::Reference::Reference.new(10)
+    reference = CiteConvert::Reference::Reference.new('book', 10)
     reference.organisation = 'National Council of Teachers of English'
     reference.publication_date = CiteConvert::Reference::PublicationDate.new('1996')
     reference.title = 'Standards for the English language arts'
@@ -127,7 +127,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
   end
 
   def dictionary
-    reference = CiteConvert::Reference::Reference.new(11)
+    reference = CiteConvert::Reference::Reference.new('book', 11)
     reference.title = 'Merriam-Webster\'s collegiate dictionary'
     # reference.edition = CiteConvert::Reference::Apa::Edition.new('11')
     reference.edition = '11'

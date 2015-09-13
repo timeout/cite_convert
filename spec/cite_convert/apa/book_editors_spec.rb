@@ -15,7 +15,7 @@ require 'cite_convert/reference/pages'
 RSpec.describe CiteConvert::Reference::Apa::Book do
   describe 'a book with no author named' do
     it 'creates an apa reference of an edited collection' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_editor(CiteConvert::Reference::Editor.new('Foreman', 'Marquis D.'))
       reference.add_editor(CiteConvert::Reference::Editor.new('Milisen', 'Koen'))
       reference.add_editor(CiteConvert::Reference::Editor.new('Fulner', 'Terry T.'))
@@ -42,7 +42,7 @@ RSpec.describe CiteConvert::Reference::Apa::Book do
     end
 
     it 'creates an apa reference of a selected work in a collection' do
-      reference = CiteConvert::Reference::Reference.new(1)
+      reference = CiteConvert::Reference::Reference.new('book', 1)
       reference.add_author(CiteConvert::Reference::Author.new('Estrin', 'Miriam'))
       reference.add_author(CiteConvert::Reference::Author.new('Malm', 'Carl'))
       reference.add_editor(CiteConvert::Reference::Editor.new('Rice', 'Susan E.'))
