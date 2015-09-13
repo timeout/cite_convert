@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'cite_convert'
+
+article = CiteConvert.deserialize(
+    File.open("/home/joe/documents/clean/0130150/jpts/0130150.xml"))
+    # File.open("/home/joe/documents/clean/0134106/jpts/0134106.xml"))
+
+CiteConvert.make_reference_list(article)

@@ -25,3 +25,6 @@ build/
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
+
+## Project specific
+*.log
