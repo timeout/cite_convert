@@ -1,31 +1,16 @@
+require 'cite_convert/reference_list'
+
 module CiteConvert
   module ReferenceList
-    class Apa
-
+    class Apa < ReferenceList
       def initialize
-        @list = Array.new
-      end
-
-      def size
-        @list.size
-      end
-
-      def empty?
-        @list.empty?
-      end
-
-      def sort!
-        @list.sort!
+        super
       end
 
       def [](index)
         result = @list.find { |ref| ref.index == index }
         raise IndexError.new("Bad Index: #{index}") if result.nil?
         result
-      end
-
-      def add_reference(reference)
-        @list << reference
       end
 
       def year(index)

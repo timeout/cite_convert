@@ -19,13 +19,13 @@ module CiteConvert
   module Reference
     class Reference
 
-      def initialize(index)
-        @index = index
+      def initialize(format, index)
+        @format, @index = format, index
         @authors = Authors.new
         @editors = Editors.new
       end
 
-      attr_reader :index, :authors, :editors, :translator, :title,
+      attr_reader :index, :format, :authors, :editors, :translator, :title,
         :volume, :issue, :pages, :publication_date, :publisher,
         :address, :retrieval_info, :article_title, :edition,
         :organisation, :selection
