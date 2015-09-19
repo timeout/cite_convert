@@ -1,9 +1,45 @@
 #!/usr/bin/env ruby
 
 require 'cite_convert'
+require 'juice/paragraph'
+require 'juice/markup'
 
 article = CiteConvert.deserialize(
-    File.open("/home/joe/documents/clean/0130150/jpts/0130150.xml"))
+    # File.open("/home/joe/documents/clean/0130150/jpts/0130150.xml"))
+    File.open("/home/joe/documents/clean/0133658/jpts/0133658.xml"))
     # File.open("/home/joe/documents/clean/0134106/jpts/0134106.xml"))
 
-CiteConvert.make_reference_list(article)
+# CiteConvert.make_reference_list(article)
+CiteConvert.translate(article)
+
+puts JPTSExtractor.text(article)
+
+article = CiteConvert.deserialize(
+            File.open("/home/joe/documents/elementa/42.xml"))
+str = String.new
+body_formatter = JPTSExtractor::Txt::Body.new(str)
+body_formatter.format(article.body)
+
+puts body_formatter.str
+
+ref_list = article.back.ref_list
+# ref_list.each {|ref| puts "#{ref}" }
+reference_list = CiteConvert.make_reference_list(article)
+markup = Juice::Markup.new
+body = article.body
+body.sections.each do |section|
+  section.each(section) do |subsection|
+    if subsection.is_a? JPTSExtractor::ArticlePart::Text
+      paragraph = Juice::Paragraph.new(subsection.to_s)
+      spans = paragraph.scan(reference_list)
+      puts "#{spans}"
+
+      unless spans.nil?
+        model = paragraph.disect(spans)
+        markup.build(model) unless model.nil?
+      end
+    end
+
+  end
+end
+puts markup.xml.target!

@@ -7,10 +7,11 @@ module CiteConvert
       def self.make_reference(reference)
         if reference.format == "journal"
             CiteConvert::ReferenceFactory::ApaPeriodical.make_reference(reference)
-        elsif reference.format == "book"
+        elsif reference.format == "book" or reference.format == "inbook" 
             CiteConvert::ReferenceFactory::ApaBook.make_reference(reference)
+        elsif reference.format == "other"
         else
-          raise Error.new("Unknown publication type: #{ref.publication_type}")
+          raise RuntimeError.new("Unknown publication type: #{reference.format}")
         end
       end
     end

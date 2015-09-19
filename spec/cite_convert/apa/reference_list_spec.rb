@@ -50,7 +50,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
     reference.volume= '34'
     reference.pages= CiteConvert::Reference::Pages.new(945, 959)
 
-    CiteConvert::ReferenceFactory::ApaPeriodical.make_reference(reference)
+    CiteConvert::ReferenceFactory::Apa.make_reference(reference)
   end
 
   def brown_desmond
@@ -61,7 +61,7 @@ RSpec.describe CiteConvert::ReferenceList::Apa do
     reference.address = CiteConvert::Reference::Address.new('New York', 'New York')
     reference.publisher = 'Wiley'
 
-    CiteConvert::ReferenceFactory::ApaBook.make_reference(reference)
+    CiteConvert::ReferenceFactory::Apa.make_reference(reference)
   end
 
   def brown_herbert

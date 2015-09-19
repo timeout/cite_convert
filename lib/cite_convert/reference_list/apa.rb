@@ -35,7 +35,7 @@ module CiteConvert
 
         if ref.authors?
           found = @list.find_all do |reference|
-            reference.authors.first.surname == ref.authors.first.surname
+            reference.authors.first.surname == ref.authors.first.surname unless reference.authors.first.nil?
           end
 
           if found.size == 1
@@ -55,7 +55,11 @@ module CiteConvert
 
         if ref.authors?
         found = @list.find_all do |reference|
-          reference.authors.first.surname == ref.authors.first.surname
+          # puts "nil reference" if reference.nil?
+          # puts "nil authors" if reference.authors.nil?
+          # puts "#{reference.authors}"
+          # puts "nil first" if reference.authors.first.nil?
+          reference.authors.first.surname == ref.authors.first.surname unless reference.authors.first.nil?
         end
 
         if found.size == 1

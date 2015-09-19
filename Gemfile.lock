@@ -36,6 +36,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.10)
   cite_convert!
+  jpts_extractor
   rake (~> 10.0)
   rspec
 

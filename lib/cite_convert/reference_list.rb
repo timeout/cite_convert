@@ -28,7 +28,7 @@ module CiteConvert
       end
 
       def add_reference(reference)
-        @list << reference
+        @list << reference unless reference.nil?
       end
 
     end
