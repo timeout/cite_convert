@@ -63,7 +63,7 @@ module Juice
     def disect(spans)
       slices = spans.to_array
       puts "slices: #{slices}"
-      MarkupModel.generate(slices, self) unless slices.first.nil? or slices.first.nil?
+      MarkupModel.generate(slices, self) unless slices.first.nil? or slices.empty?
     end
   end
 end
